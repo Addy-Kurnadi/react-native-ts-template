@@ -1,19 +1,15 @@
 import { Component } from "react"
 import * as React from "react"
 import { Platform, StyleSheet, Text, View } from "react-native"
-
+import { Provider } from "react-redux"
+import Navigator from "./mainNavigator"
+import store from "./Store/store"
 export class App extends Component<any, any> {
-	constructor(props: any) {
-		super(props)
-	}
-
 	render() {
-		const test = "tes"
-
 		return (
-			<View>
-				<Text>{"asdas"}</Text>
-			</View>
+			<Provider store={store}>
+				<Navigator />
+			</Provider>
 		)
 	}
 }
